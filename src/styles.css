@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+.active-mod {
+  color: var(--bs-nav-link-color) !important;
+  background-color: white !important;
+  -webkit-box-shadow: -5px 0px 73px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -5px 0px 73px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: -5px 0px 73px -11px rgba(0, 0, 0, 0.75);
+}
+
+.opacidad {
+  opacity: 0.3;
+}
+.texto-cursiva {
+  font-style: italic;
+}
+ .scroll-container {
+   width: 300px;
+   /* Ancho del contenedor */
+   height: 200px;
+   /* Altura del contenedor */
+   overflow: auto;
+   /* Habilitar las barras de desplazamiento */
+   border: 1px solid #ccc;
+   /* Borde para mayor claridad */
+ }
+body {
+  overflow-y: scroll;
+  /* Muestra el scroll vertical siempre */
+}
+
+:host {
+  overflow-y: scroll;
+  /* Muestra el scroll vertical en el componente */
+}

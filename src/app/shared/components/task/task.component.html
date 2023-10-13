@@ -1,0 +1,6 @@
+<div class="form-check form-switch" [ngClass]="{ 'opacidad': !task.status }">
+  <input (click)="activar(task)" [checked]="task.status" class="form-check-input" type="checkbox"
+    id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">{{task.title}} <span class="texto-cursiva"
+      style="font-size: 12px; color: #bdbdbd;">--- Categoria: {{ task.category.name }} --- Fecha Límite: {{formatFecha(task.deadline)}} </span> </label>
+</div>

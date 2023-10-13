@@ -1,0 +1,12 @@
+.rayado {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  /* Cambia el color del rayado a rojo */
+  text-decoration-thickness: 2px;
+  /* Cambia el grosor del rayado a 2 píxeles */
+}
+
+.opacidad {
+  opacity: 0.2;
+  /* 50% de opacidad */
+}

@@ -1,0 +1,12 @@
+<form #miFormulario="ngForm">
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="titulo" name="name" [(ngModel)]="name">
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+    <button type="button" (click)="onSubmit()" class="btn btn-primary" #btnCrearTarea>Crea categoría</button>
+
+  </div>
+</form>

@@ -1,0 +1,64 @@
+<div class="container " style="padding-left: 100px; padding-right: 100px;">
+  <div class="text-end mt-3"> <!-- Alinea los botones a la derecha -->
+    <!-- Botón para categoría -->
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createcategory" style="margin-right: 10px;">
+      <i class="bi bi-bookmark-plus"></i> Categoría
+    </button>
+
+    <!-- Botón para mostrar el modal de creación de tarea -->
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="bi bi-plus-square-dotted"></i> Tarea
+    </button>
+  </div>
+
+  <table class="table table-hover mt-5">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iteración sobre la lista de tareas -->
+      <tr *ngFor="let item of listTask">
+        <th>
+          <!-- Componente para mostrar una tarea -->
+          <app-task [task]="item"></app-task>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal Create Task-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="createTask" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createTask">Crear Tarea</h5>
+        <!-- Botón para cerrar el modal -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Componente para crear una nueva tarea con emisión de evento para cerrar el modal -->
+        <app-create-task (cerrarModal)="cerrarModal($event)"></app-create-task>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Create CAtegory-->
+<div class="modal fade" id="createcategory" tabindex="-1" aria-labelledby="createTask" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createTask">Crear Categoría</h5>
+        <!-- Botón para cerrar el modal -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Componente para crear una nueva tarea con emisión de evento para cerrar el modal -->
+        <app-create-category (cerrarModal)="cerrarModalCategoria($event)"></app-create-category>
+      </div>
+    </div>
+  </div>
+</div>

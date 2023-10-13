@@ -1,0 +1,25 @@
+<form #miFormulario="ngForm">
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Título</label>
+    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo">
+  </div>
+
+  <div class="mb-3">
+    <label for="fecha" class="form-label">Fecha Límite</label>
+    <input type="datetime-local" class="form-control" id="fecha" name="fecha" [(ngModel)]="fechaLimite">
+  </div>
+
+  <div class="mb-3">
+    <label for="categoria" class="form-label">Categoría:</label>
+    <select class="form-select" id="categoria" name="categoria" [(ngModel)]="categoriaId">
+      <option value="0" selected>Selecciona una categoría</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria.categoryId">{{ categoria.name }}</option>
+    </select>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+    <button type="button" (click)="onSubmit()" class="btn btn-primary" #btnCrearTarea>Crea tarea</button>
+
+  </div>
+</form>
