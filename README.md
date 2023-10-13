@@ -31,13 +31,13 @@ Asegúrate de tener las siguientes herramientas y dependencias instaladas:
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tuusuario/gestor-de-tareas.git
+git clone https://github.com/24BytesCo/TareasPtSatrackFront
 ```
 
 2. Navega al directorio del proyecto:
 
 ```bash
-cd gestor-de-tareas
+cd TareasPtSatrackFront
 ```
 
 3. Instala las dependencias:
