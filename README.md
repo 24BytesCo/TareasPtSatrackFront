@@ -1,27 +1,58 @@
-# TareasPtSatrackFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+# Gestor de Tareas
 
-## Development server
+El **Gestor de Tareas** es una aplicación de gestión de tareas que permite a los usuarios crear, asignar fechas límite, categorizar, y marcar tareas como completadas. Este proyecto se ha desarrollado como parte de una prueba técnica para la empresa Satrack.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Características Clave
 
-## Code scaffolding
+- **Carga Perezosa**: La aplicación utiliza la técnica de carga perezosa (Lazy Loading) para cargar módulos y componentes de manera eficiente.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Interceptor para Loader**: Se ha implementado un interceptor para mostrar un indicador de carga (loader) durante las solicitudes HTTP.
 
-## Build
+- **@Input y @Output**: Los decoradores @Input y @Output se emplean para pasar datos entre componentes y módulos.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **RxJS BehaviorSubject**: Se utiliza RxJS BehaviorSubject para crear observables que almacenan y transmiten el estado de la aplicación.
 
-## Running unit tests
+- **Peticiones HTTP**: La aplicación realiza peticiones HTTP a una API para crear, leer y actualizar tareas y categorías.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **SweetAlert2**: Se utiliza SweetAlert2 para mostrar notificaciones y diálogos interactivos al usuario.
 
-## Running end-to-end tests
+- **Modularizado**: El proyecto está modularizado para facilitar el mantenimiento y escalabilidad.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Requisitos
 
-## Further help
+Asegúrate de tener las siguientes herramientas y dependencias instaladas:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://cli.angular.io/)
+
+## Instalación
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/tuusuario/gestor-de-tareas.git
+```
+
+2. Navega al directorio del proyecto:
+
+```bash
+cd gestor-de-tareas
+```
+
+3. Instala las dependencias:
+
+```bash
+npm install
+```
+
+4. Inicia la aplicación:
+
+```bash
+ng serve
+```
+
+## Uso
+
+La aplicación se ejecutará en http://localhost:4200. Abre tu navegador web y accede a esa dirección para comenzar a utilizar el Gestor de Tareas.
+
