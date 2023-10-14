@@ -81,10 +81,10 @@ export class TaskComponent {
     });
   }
 
-  // Método para formatear la fecha en el formato deseado
   formatFecha(fechaStr: string): string {
     const fecha = new Date(fechaStr);
     const fechaActual = new Date();
+    fechaActual.setHours(0, 0, 0, 0); // Establecer la hora actual a la medianoche
 
     // Definir los nombres de los meses y los minutos
     const meses: string[] = [
@@ -120,13 +120,42 @@ export class TaskComponent {
     // Formatear los minutos para que siempre tengan dos dígitos
     const minutosFormateados = minutos < 10 ? `0${minutos}` : `${minutos}`;
 
+    console.log('calculando fecha', fecha);
+    console.log('calculando fecha', fechaActual);
+
     if (diferenciaDias === 0) {
-      return `Hoy a las ${hora12}:${minutosFormateados} ${ampm}`;
+      // Verificar si la fecha es hoy o en el futuro
+      if (fecha > fechaActual) {
+        return `Hoy a las ${hora12}:${minutosFormateados} ${ampm}`;
+      } else {
+        return `Mañana a las ${hora12}:${minutosFormateados} ${ampm}`;
+      }
     } else if (diferenciaDias === 1) {
       return `Mañana a las ${hora12}:${minutosFormateados} ${ampm}`;
     } else {
-      // Formatear la fecha normalmente
-      return `${dia} de ${meses[mes]} a las ${hora12}:${minutosFormateados} ${ampm}`;
+      if (diferenciaDias == -1) {
+        return `Venció Ayer, el ${dia} de ${meses[mes]} a las ${hora12}:${minutosFormateados} ${ampm}`;
+      }
+      if (diferenciaDias == -2) {
+        return `Venció Antes de ayer, el ${dia} de ${meses[mes]} a las ${hora12}:${minutosFormateados} ${ampm}`;
+      }
+
+      if (diferenciaDias < -2) {
+        return `Venció el ${dia} de ${meses[mes]} a las ${hora12}:${minutosFormateados} ${ampm}`;
+      }
+
+      console.log('diferenciaDias', diferenciaDias);
+
+      // Calcular la diferencia en días desde "Mañana"
+      const diasDesdeManana = diferenciaDias - 1;
+
+      if (diasDesdeManana === 1) {
+        return `En 2 días, el ${dia} de ${meses[mes]} a las ${hora12}:${minutosFormateados} ${ampm}`;
+      } else {
+        return `En ${diasDesdeManana + 2} días, el ${dia} de ${
+          meses[mes]
+        } a las ${hora12}:${minutosFormateados} ${ampm}`;
+      }
     }
   }
 }
